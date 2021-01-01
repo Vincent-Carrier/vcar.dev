@@ -1,0 +1,31 @@
+[build]
+  publish = "public"
+  command = "hugo --gc --minify --contentDir=/Users/vincent/Documents/content"
+
+[build.processing.html]
+  minify = true
+
+[build.processing.images]
+  compress = true
+
+[context.production.environment]
+  HUGO_VERSION = "0.72.0"
+  HUGO_ENV = "production"
+  HUGO_ENABLEGITINFO = "true"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+# [[plugins]]
+# package = "@netlify/plugin-lighthouse"
+#   # optional, fails build when a category is below a threshold
+#   [plugins.inputs.thresholds]
+#     performance = 0.9
+#     accessibility = 0.9
+#     best-practices = 0.9
+
+package = "netlify-plugin-hugo-cache-resources"

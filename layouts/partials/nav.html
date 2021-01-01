@@ -1,0 +1,14 @@
+<nav aria-label="primary">
+  <ul>
+      {{ $url := .Page.RelPermalink }}
+      {{ $sections := slice "/" "/blog" }}
+      {{ range $sections }}
+          {{ with $.GetPage . }}
+            <li>
+              <a {{ if .RelPermalink | in $url }}id="active-page"{{ end }}
+                 href="{{ .RelPermalink}}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+      {{ end }}
+  </ul>
+</nav>

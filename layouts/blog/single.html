@@ -1,0 +1,11 @@
+{{ define "description" }}
+    {{ .Page.Summary }}
+{{ end }}
+{{ define "head" }}
+
+{{ end }}
+{{ define "main" }}
+    {{ partial "header.html" .Page.Params }}
+    {{ .Content }}
+    {{ partial "post-footer.html" . }}
+{{ end }}

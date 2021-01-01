@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <h1>All Posts</h1>
+  <ul class="post-list">
+    {{ range .Pages }}
+      <li>
+        <article class="post-preview">
+          <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+          <time>{{- .PublishDate.Format "Monday, January 2, 2006" -}}</time>
+          <p class="summary">
+            {{ .Summary | truncate 300 "..." | plainify | safeHTML }}
+          </p>
+          <p class="read-more"><a href="{{ .Permalink }}">Read More</a></p>
+        </article>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

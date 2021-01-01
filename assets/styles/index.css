@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import "_sidebar.css";
+
+:root {
+  --serif: "EB Garamond", Garamond, serif;
+  --sans: Helvetica, system-ui;
+}
+
+body {
+  font-family: var(--serif);
+  font-size: 130%;
+  line-height: 1.5;
+  color: gray(10);
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 20ch 65ch 1fr;
+}
+
+body > header {
+  grid-column: 2
+}
+
+main {
+  grid-column: 3;
+}

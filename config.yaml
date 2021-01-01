@@ -1,0 +1,12 @@
+languageCode: en-us
+title: Vincent Carrier, Web Developer
+relativeURLs: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: tango
+    lineNos: true
+    noClasses: false
