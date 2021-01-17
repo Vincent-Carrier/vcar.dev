@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-        {{ .Page.Title }} | {{ .Site.Title }}
+      {{ block "title" . }}{{ .Page.Title }}{{ end }} — {{ .Site.Title }}
     </title>
     <link
-            rel="icon"
-            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
     />
-    {{ $css := resources.Get "styles/index.css" | resources.PostCSS }}
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Spectral:ital,wght@0,400;0,700;1,400&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    
+    {{ $css := resources.Get "styles/index.css" | resources.PostCSS (dict "inlineImports" true) }}
+    {{ if hugo.IsProduction }}{{ $css = $css | minify | resources.PostProcess }}{{ end }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-    <script
-            async
-            defer
-            data-domain="vcar.dev"
-            src="https://plausible.io/js/plausible.js"
-    ></script>
-</head>
+    <!-- <script -->
+    <!-- async -->
+    <!-- defer -->
+    <!-- data-domain="vcar.dev" -->
+    <!-- src="https://plausible.io/js/plausible.js" -->
+    <!-- ></script> -->
+  </head>
 
-<body class="{{ anchorize .Page.Title }}">
-<header>{{ partial "nav.html" . }}</header>
-{{ with .Page }}
-    <main>
-        <article class="{{ anchorize .Page.Kind }} {{ anchorize .Page.Type }}">
-            {{ block "main" . }} {{ .Content }} {{ end }}
-        </article>
-    </main>
-{{ end }}
-<footer>Copyright © 2020 Vincent Carrier</footer>
-</body>
+  <body class="{{ anchorize .Page.Title }} pt-16 sm:py-16">
+    <div class="">
+      <header>{{ partial "nav.html" . }}</header>
+    </div>
+    <div class="flex flex-col items-center md:px-8">
+      {{ block "main" .Page }} {{ end }}
+    </div>
+
+    <script>
+      const $nav = document.querySelector('nav[aria-label=primary]')
+      $nav.querySelectorAll('a').forEach((el) => {
+        if (location.href === el.href) el.classList.replace('text-gray-200', 'text-gray-50')
+      })
+    </script>
+  </body>
 </html>

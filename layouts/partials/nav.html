@@ -1,14 +1,11 @@
-<nav aria-label="primary">
-  <ul>
-      {{ $url := .Page.RelPermalink }}
-      {{ $sections := slice "/" "/blog" }}
-      {{ range $sections }}
-          {{ with $.GetPage . }}
-            <li>
-              <a {{ if .RelPermalink | in $url }}id="active-page"{{ end }}
-                 href="{{ .RelPermalink}}">{{ .Title }}</a>
-            </li>
-          {{ end }}
-      {{ end }}
-  </ul>
+<nav class="absolute right-0 top-0 bg-gray-800 sm:rounded-bl-xl sm:shadow-lg flex space-x-8
+            px-8 py-4 w-full sm:w-auto bg-opacity-90 sm:bg-opacity-100" aria-label="primary">
+  {{ $url := .Page.RelPermalink }}
+  {{ $pages := dict "/" "/index" "/blog" "/blog" }}
+  {{ range $url, $title := $pages }}
+    {{ with $.GetPage $url }}
+      <a class="text-gray-200 hover:text-gray-50 font-mono text-2xl sm:text-xl"
+         href="{{ .RelPermalink }}">{{ $title }}</a>
+    {{ end }}
+  {{ end }}
 </nav>

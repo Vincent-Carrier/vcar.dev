@@ -1,0 +1,56 @@
+article {
+  @apply font-serif text-gray-800 text-xl;
+
+  & a {
+    @apply text-blue-600;
+  }
+
+  & ul {
+    @apply list-disc ml-4;
+  }
+
+  & p {
+    @apply justified indent;
+  }
+
+  & p > code {
+    @apply text-blue-800;
+    font-size: 90%;
+    white-space: nowrap;
+  }
+
+  & > * + * {
+    margin-top: theme('space.4');
+  }
+
+  & h1 {
+    @apply text-4xl tracking-tight font-sans;
+  }
+  & h2 {
+    @apply text-2xl mt-12;
+  }
+
+  & h1,
+  & h2,
+  & h3 {
+    @apply font-bold font-sans text-gray-900;
+  }
+
+  & code {
+    hyphens: none;
+  }
+  & .highlight {
+    width: 90ch;
+    @apply px-2 py-4 border-2 border-gray-200 rounded-md bg-gray-50;
+    @apply text-sm mx-auto max-w-xl lg:max-w-2xl my-6;
+  }
+  & .chroma {
+    @apply bg-gray-50;
+  }
+  & summary {
+    @apply ml-6;
+  }
+  & summary:focus {
+    @apply outline-none;
+  }
+}

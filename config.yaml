@@ -6,6 +6,8 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    parser:
+      attribute: true
   highlight:
     style: tango
     lineNos: true

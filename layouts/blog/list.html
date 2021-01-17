@@ -1,17 +1,26 @@
-{{ define "main" }}
-  <h1>All Posts</h1>
-  <ul class="post-list">
+{{ define "title" }}Blog{{ end }} {{ define "main" }}
+<main class="max-w-7xl sm:mt-24 sm:px-4">
+  <ul
+    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3
+           sm:gap-6 md:gap-8 divide-y-2 divide-gray-200 sm:divide-none"
+  >
     {{ range .Pages }}
-      <li>
-        <article class="post-preview">
-          <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-          <time>{{- .PublishDate.Format "Monday, January 2, 2006" -}}</time>
-          <p class="summary">
+    <li class="Card-lg">
+      <a href="{{ .RelPermalink }}">
+        <div class="px-8 py-6 flex-col max-w-screen-sm">
+          <header class="mb-4">
+            <p class="font-bold text-gray-900 text-2xl">{{ .Title }}</p>
+            <time class="text-gray-600"
+              >{{- .PublishDate.Format "January 2, 2006" -}}</time
+            >
+          </header>
+          <p class="font-serif tracking-tight text-gray-700 leading-6 text-lg">
             {{ .Summary | truncate 300 "..." | plainify | safeHTML }}
           </p>
-          <p class="read-more"><a href="{{ .Permalink }}">Read More</a></p>
-        </article>
-      </li>
+        </div>
+      </a>
+    </li>
     {{ end }}
   </ul>
+</main>
 {{ end }}

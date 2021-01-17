@@ -1,11 +1,13 @@
-{{ define "description" }}
-    {{ .Page.Summary }}
-{{ end }}
-{{ define "head" }}
-
-{{ end }}
 {{ define "main" }}
-    {{ partial "header.html" .Page.Params }}
+<main class="Card-lg px-4 sm:px-10 py-8 sm:mt-12 sm:mx-4">
+  <article class="Prose max-w-screen-sm sm:max-w-2xl flex flex-col">
+    <header>
+      <h1>{{ .Title }}</h1>
+      <time class="text-gray-600 font-sans">
+        {{- .PublishDate.Format "Monday, January 2, 2006" -}}
+      </time>
+    </header>
     {{ .Content }}
-    {{ partial "post-footer.html" . }}
+  </article>
+</main>
 {{ end }}

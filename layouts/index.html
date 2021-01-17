@@ -1,2 +1,24 @@
 {{ define "main" }}
+  <main class="Card-lg sm:mt-24 min-h-screen sm:min-h-0">
+    <div class="max-w-screen-sm px-6 sm:px-16  py-8 sm:py-12">
+      <h1 class="sm:text-right font-bold tracking-tight text-6xl mb-6">About me</h1>
+      <p class="font-serif indented justified text-2xl">
+        I'm a Montréal-based software developer who specializes in the JamStack. I feel most comfortable at the intersection between code and design. I also spend too much time on fonts. My girlfriend likes to complain about it.
+      </p>
+    </div>
+
+    <div class="relative mt-20 mb-8 transform sm:-translate-x-12 bg-blue-600 text-gray-50 max-w-md px-4 py-6 shadow-2xl">
+      <div class="text-right mr-48">
+        <p class="italic font-bold text-blue-100 tracking-wide sm:text-lg pb-2">
+          Write code.<br>
+          Not too much.<br>
+          Mostly functions.
+        </p>
+        <p class="font-bold text-3xl">Vincent Carrier</p>
+      </div>
+      {{ $profile := resources.Get "/profile.png" }}
+      <img src="{{  $profile.RelPermalink }}" alt="Me, basking in the eternal joy of autumn leaves"
+           class="fixed -right-14 bottom-0 w-72" style="filter: grayscale(1) contrast(80%) sepia(20%) hue-rotate(180deg)">
+    </div>
+  </main>
 {{ end }}

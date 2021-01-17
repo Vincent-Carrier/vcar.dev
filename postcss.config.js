@@ -1,5 +1,10 @@
 module.exports = {
   plugins: [
-    require('postcss-preset-env')({ stage: 0 })
-  ]
+    require('tailwindcss'),
+    require('postcss-font-magician')({
+      display: 'swap',
+    }),
+    require('postcss-nesting'),
+    require('autoprefixer'),
+  ],
 }
