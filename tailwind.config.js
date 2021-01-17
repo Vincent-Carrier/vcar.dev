@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   purge: {
-    enabled: process.env.HUGO_ENVIRONMENT === 'production',
+    enabled: process.env.HUGO_ENV === 'production',
     content: ['./content/**/*.md', './layouts/**/*.html'],
   },
   presets: [],
