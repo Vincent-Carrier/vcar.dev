@@ -1,3 +1,5 @@
+{{ define "title" }}About me{{ end }}
+
 {{ define "main" }}
   <main class="Card-lg sm:mt-24 min-h-screen sm:min-h-0">
     <div class="max-w-screen-sm px-6 sm:px-16  py-8 sm:py-12">
@@ -9,7 +11,7 @@
 
     <div class="relative mt-20 mb-8 transform sm:-translate-x-12 bg-blue-600 text-gray-50 max-w-md px-4 py-6 shadow-2xl">
       <div class="text-right mr-48">
-        <p class="italic font-bold text-blue-100 tracking-wide sm:text-lg pb-2">
+        <p class="italic font-bold text-blue-50 tracking-wide sm:text-lg pb-2">
           Write code.<br>
           Not too much.<br>
           Mostly functions.
@@ -18,7 +20,10 @@
       </div>
       {{ $res := resources.Get "/profile.png" }}
       {{ $profile := $res.Resize "300x" }}
-      <img src="{{  $profile.RelPermalink }}" alt="Me, basking in the eternal joy of autumn leaves"
+      {{ $profile2 := $res.Resize "600x" }}
+      <img src="{{ $profile.RelPermalink }}"
+           srcset="{{ $profile.RelPermalink }} 1x, {{ $profile2.RelPermalink }} 2x"
+           alt="Me, basking in the eternal joy of autumn leaves"
            class="fixed -right-14 bottom-0 w-72" style="filter: grayscale(1) contrast(80%) sepia(20%) hue-rotate(180deg)">
     </div>
   </main>

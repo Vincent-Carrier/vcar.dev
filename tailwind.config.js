@@ -4,6 +4,7 @@ module.exports = {
   purge: {
     enabled: process.env.HUGO_ENV === 'production',
     content: ['./content/**/*.md', './layouts/**/*.html'],
+    layers: ['components', 'utilities'],
   },
   presets: [],
   darkMode: false, // or 'media' or 'class'

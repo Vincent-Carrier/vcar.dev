@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta description="A blog about web development, design and more" />
     <title>
       {{ block "title" . }}{{ .Page.Title }}{{ end }} — {{ .Site.Title }}
     </title>
@@ -16,12 +17,7 @@
     {{ $css := resources.Get "styles/index.css" | resources.PostCSS (dict "inlineImports" true) }}
     {{ if hugo.IsProduction }}{{ $css = $css | minify | resources.PostProcess }}{{ end }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-    <!-- <script -->
-    <!-- async -->
-    <!-- defer -->
-    <!-- data-domain="vcar.dev" -->
-    <!-- src="https://plausible.io/js/plausible.js" -->
-    <!-- ></script> -->
+    <script async defer data-domain="vcar.dev" src="https://plausible.io/js/plausible.js"></script>
   </head>
 
   <body class="{{ anchorize .Page.Title }} pt-16 sm:py-16">
