@@ -7,16 +7,23 @@
       <p class="font-serif indented justified text-2xl">
         I'm a Montréal-based software developer who specializes in the JamStack. I feel most comfortable at the intersection between code and design. I also spend too much time on fonts. My girlfriend likes to complain about it.
       </p>
+      <div class="mt-8 flex flex-wrap space-x-2 text-blue-700 font-bold">
+        <a href="https://www.github.com/Vincent-Carrier">GitHub</a>
+        <span>|</span>
+        <a href="https://twitter.com/VincntCarrier">Twitter</a>
+        <span>|</span>
+        <a href="https://www.linkedin.com/in/vincent-carrier-23830a12b/">LinkedIn</a>
+      </div>
     </div>
 
-    <div class="relative mt-20 mb-8 transform sm:-translate-x-12 bg-blue-600 text-gray-50 max-w-md px-4 py-6 shadow-2xl">
+    <div class="relative mt-20 mb-8 transform sm:-translate-x-12 bg-blue-600 max-w-md px-4 py-6 shadow-2xl">
       <div class="text-right mr-48">
-        <p class="italic font-bold text-blue-50 tracking-wide sm:text-lg pb-2">
+        <p class="italic font-bold text-gray-50 tracking-wide sm:text-lg pb-2">
           Write code.<br>
           Not too much.<br>
           Mostly functions.
         </p>
-        <p class="font-bold text-3xl">Vincent Carrier</p>
+        <p class="font-bold text-3xl text-white">Vincent Carrier</p>
       </div>
       {{ $res := resources.Get "/profile.png" }}
       {{ $profile := $res.Resize "300x" }}

@@ -10,7 +10,9 @@ article {
   }
 
   & p {
-    @apply justified indent;
+    @media (min-width: theme('screens.sm')) {
+      @apply justified indent;
+    }
   }
 
   & p > code {
