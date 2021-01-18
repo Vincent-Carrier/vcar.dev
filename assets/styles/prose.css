@@ -40,9 +40,9 @@ article {
     hyphens: none;
   }
   & .highlight {
-    width: 90ch;
-    @apply px-2 py-4 border-2 border-gray-200 rounded-md bg-gray-50;
-    @apply text-sm mx-auto max-w-xl lg:max-w-2xl my-6;
+    width: clamp(40ch, 100%, 90ch);
+    @apply px-2 sm:px-4 py-4 border-2 border-gray-200 rounded-md bg-gray-50;
+    @apply text-sm mx-auto my-6;
   }
   & .chroma {
     @apply bg-gray-50;

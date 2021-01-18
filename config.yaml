@@ -10,5 +10,5 @@ markup:
       attribute: true
   highlight:
     style: tango
-    lineNos: true
+    lineNos: false
     noClasses: false
