@@ -170,9 +170,8 @@ for (let cell of ticTacToe) {
 }
 ```
 
----
+<hr>
 
-4
 I hope you can see now how Iterators, Iterables and generators let us write code that is more scalable, more expressive, and more maintainable.
 
 ## Bonus round: pipe operator

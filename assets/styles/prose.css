@@ -53,4 +53,8 @@ article {
   & summary:focus {
     @apply outline-none;
   }
+
+  & hr {
+    @apply mt-16 mb-8 mx-16;
+  }
 }
