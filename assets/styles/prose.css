@@ -1,6 +1,10 @@
 article {
   @apply font-serif text-gray-800 text-xl;
 
+  & p:first-of-type {
+    text-indent: unset;
+  }
+
   & a {
     @apply text-blue-600;
   }
@@ -52,11 +56,12 @@ article {
   & summary {
     @apply ml-6;
   }
-  & summary:focus {
-    @apply outline-none;
-  }
 
   & hr {
-    @apply mt-16 mb-8 mx-16;
+    @apply mt-16 mb-12 mx-16;
+  }
+
+  & figure {
+    @apply mx-auto mt-16 mb-12
   }
 }

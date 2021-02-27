@@ -9,7 +9,7 @@
   body {
     font-synthesis: none;
     background-image: url('/topography.svg');
-    @apply bg-gray-600;
+    @apply bg-gray-50;
     @apply text-gray-800;
   }
 
@@ -22,10 +22,10 @@
 
 @layer components {
   .Card-md {
-    @apply bg-white rounded-md shadow-xl;
+    @apply bg-white rounded-md shadow-md;
   }
   .Card-lg {
-    @apply bg-white sm:rounded-lg sm:shadow-2xl;
+    @apply bg-white sm:rounded-lg sm:shadow-lg;
   }
 
   .Question {

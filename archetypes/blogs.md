@@ -1,5 +1,5 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ now }}
-draft: false
+draft: true
 ---
