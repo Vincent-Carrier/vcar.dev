@@ -5,6 +5,7 @@
            sm:gap-6 md:gap-8 divide-y-2 divide-gray-200 sm:divide-none"
   >
     {{ range .Pages }}
+      {{ if (ne .Draft true) }}
     <li class="Card-lg">
       <a href="{{ .RelPermalink }}">
         <div class="px-8 py-6 flex-col max-w-screen-sm">
@@ -20,6 +21,7 @@
         </div>
       </a>
     </li>
+      {{ end }}
     {{ end }}
   </ul>
 </main>

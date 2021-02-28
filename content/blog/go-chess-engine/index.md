@@ -1,6 +1,7 @@
 ---
 title: Let's Write a Chess Engine in Go!
 date: '2021-01-16'
+draft: true
 summary: |
     Let's explore one of JavaScript's most undervalued feature and find
     out how to make the best of it.
