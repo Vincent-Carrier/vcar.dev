@@ -1,0 +1,3 @@
+{{ $opts := dict "format" "esm" "target" "es2017" }}
+{{ $js := resources.Get (.Get 0) | js.Build $opts }}
+<script defer type='module' src='{{ $js.RelPermalink }}'></script>

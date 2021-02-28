@@ -13,13 +13,6 @@
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
 
-#[[headers]]
-#  for = "/*"
-#  [headers.values]
-#    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-#    X-Frame-Options = "DENY"
-#    X-XSS-Protection = "1; mode=block"
-
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
    # optional, fails build when a category is below a threshold

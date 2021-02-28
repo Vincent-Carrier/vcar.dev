@@ -6,10 +6,8 @@ summary: |
     out how to make the best of it.
 ---
 
-<script type="module" src='https://cdn.skypack.dev/chessboard-element'></script>
-<style>
-</style>
-
+<script defer type='module' src='https://cdn.skypack.dev/chessboard-element'></script>
+{{< script "js/chess1.ts" >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -18,8 +16,8 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pr
 culpa qui officia deserunt mollit anim id est laborum.
 
 <figure class='max-w-lg'>
-    <chess-board
-        position="start"
+    <chess-board id='intro'
+        position='start'
         draggable-pieces>
     </chess-board>
 </figure>
