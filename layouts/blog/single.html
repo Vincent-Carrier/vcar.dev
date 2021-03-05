@@ -1,14 +1,45 @@
+{{ define "title" }}
+    {{ if .Params.series }}
+        {{ $series := index .Params.series 0 }}
+        {{ $series }}: {{ .Title }}
+    {{ end }}
+{{ end }}
 {{ define "description" }}{{ .Summary }}{{ end }}
 {{ define "main" }}
-<main class="Card-lg py-16 px-16 sm:mt-12 sm:mx-4">
-  <article class="max-w-prose">
-    <header>
-      <h1>{{ .Title }}</h1>
-      <time class="text-gray-600 font-sans">
-        {{- .PublishDate.Format "Monday, January 2, 2006" -}}
-      </time>
-    </header>
-    {{ .Content }}
-  </article>
-</main>
+  <main class="Card-lg py-16 px-12 sm:mt-12 sm:mx-4">
+    <article class="max-w-prose flow-root">
+      <header>
+        <h1>
+            {{ if .Params.series }}
+              <div class='text-gray-600 font-medium text-2xl'>
+                  {{ $series := index .Params.series 0 }}
+                  {{ $series }}
+              </div>
+            {{ end }}
+            {{ .Title }}
+        </h1>
+        <time class="text-gray-600 mt-4 block font-sans">
+            {{- .PublishDate.Format "Monday, January 2, 2006" -}}
+        </time>
+      </header>
+        {{ if .Params.series }}
+          <nav class='font-sans max-w-lg my-16 px-6 py-6 mx-auto bg-gray-50 border-2 border-dashed border-blue-400 rounded-md'>
+              {{ $name := index .Params.series 0 }}
+            <p class='font-sans'>This post is part of a series.</p>
+              {{ $name := $name | urlize }}
+              {{ $series := index .Site.Taxonomies.series $name }}
+            <ol class='mt-4 pl-6 list-disc'>
+                {{ range $series.Pages.Reverse }}
+                    {{ if (eq .RelPermalink $.Page.RelPermalink) }}
+                      <li><strong>{{.LinkTitle}}</strong></li>
+                    {{ else }}
+                      <li><a href="{{.RelPermalink}}">{{.LinkTitle}}</a></li>
+                    {{ end}}
+                {{end}}
+            </ol>
+          </nav>
+        {{end}}
+        {{ .Content }}
+    </article>
+  </main>
 {{ end }}

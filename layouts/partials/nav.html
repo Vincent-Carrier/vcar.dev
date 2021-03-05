@@ -1,10 +1,10 @@
-<nav class="absolute right-0 top-0 bg-gray-800 sm:rounded-bl-xl sm:shadow-lg flex space-x-8
-            px-8 py-4 w-full sm:w-auto bg-opacity-90 sm:bg-opacity-100" aria-label="primary">
+<nav class="absolute mt-16 mr-16 right-0 top-0 bg-gray-50 rounded-lg shadow-md flex space-x-8
+            px-8 py-4 w-auto bg-opacity-90" aria-label="primary">
   {{ $url := .Page.RelPermalink }}
   {{ $pages := dict "/" "/index" "/blog" "/blog" }}
   {{ range $url, $title := $pages }}
     {{ with $.GetPage $url }}
-      <a class="text-gray-200 hover:text-gray-50 font-mono text-2xl sm:text-xl"
+      <a class="text-gray-700 hover:text-purple-800 font-mono font-medium text-2xl sm:text-xl"
          href="{{ .RelPermalink }}">{{ $title }}</a>
     {{ end }}
   {{ end }}

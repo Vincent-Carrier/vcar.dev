@@ -46,6 +46,6 @@
     text-indent: theme('space.6');
   }
   .indent-none {
-    text-indent: none;
+    text-indent: unset;
   }
 }

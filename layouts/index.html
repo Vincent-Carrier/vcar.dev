@@ -1,4 +1,4 @@
-{{ define "title" }}About me{{ end }}
+{{ define "title" }}About me | {{ $.Site.Title }}{{ end }}
 
 {{ define "main" }}
   <main class="Card-lg sm:mt-24 min-h-screen sm:min-h-0">
@@ -30,6 +30,7 @@
       {{ $profile2 := $res.Resize "600x" }}
       <img src="{{ $profile.RelPermalink }}"
            srcset="{{ $profile.RelPermalink }} 1x, {{ $profile2.RelPermalink }} 2x"
+           title="Me, basking in the eternal joy of autumn leaves"
            alt="Me, basking in the eternal joy of autumn leaves"
            class="fixed -right-14 bottom-0 w-72" style="filter: grayscale(1) contrast(80%) sepia(20%) hue-rotate(180deg)">
     </div>

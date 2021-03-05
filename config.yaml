@@ -12,3 +12,7 @@ markup:
     style: tango
     lineNos: false
     noClasses: false
+
+taxonomies:
+  series: series
+  tag: tags
