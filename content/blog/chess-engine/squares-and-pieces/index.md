@@ -9,15 +9,12 @@ summary: |
 
 <script defer type='module' src='https://cdn.skypack.dev/chessboard-element'></script>
 <script defer src='../wasm_exec.js'></script>
-<script defer type='module' src='../chess.js'></script>
-<style>
-    chess-board::part(e4) {
-      outline: 3px solid #F9FAFB;
-      outline-offset: -3px;
-    }
-</style>
+<script defer type='module' src='../wasm_load.js'></script>
+<script defer type='module' src='index.js'></script>
+<div id='chessboard-styles'></div>
 
-If you're new to computer chess, your first intuition might be to represent the board like this:
+If you're new to computer chess, your first intuition might be to represent the board like this.
+However, representing the board like this forces us to make four integer comparisons every time we want to know if a square is inbounds.
 
 ```go
 type Board [8][8]Piece
@@ -25,11 +22,7 @@ type Board [8][8]Piece
 type Sq struct {
     X, Y int8
 }
-```
 
-However, representing the board like this forces us to make four integer comparisons every time we want to know if a square is inbounds.
-
-```go
 func (sq Sq) Inbounds() bool {
     return 0 <= sq.X && sq.X <= 7 && 
            0 <= sq.Y && sq.Y <= 7

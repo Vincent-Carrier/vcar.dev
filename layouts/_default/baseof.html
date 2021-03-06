@@ -20,8 +20,11 @@
       {{ if hugo.IsProduction }}{{ $css = $css | minify | resources.PostProcess }}{{ end }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}"/>
     <script async defer data-domain="vcar.dev" src="https://plausible.io/js/plausible.js"></script>
+    <script>
+        window.$ = (query, el = document) => el.querySelector(query)
+        window.$$ = (query, el = document) => Array.from(el.querySelectorAll(query))
+    </script>
   </head>
-
   <body class="{{ anchorize .Page.Title }} py-16">
       {{ partial "nav.html" . }}
     <main class='max-w-3xl mx-auto mt-20 px-4'>

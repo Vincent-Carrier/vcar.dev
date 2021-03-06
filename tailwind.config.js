@@ -170,7 +170,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
-      sans: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+      sans: ['Inter', 'system-ui', 'Helvetica', 'sans-serif'],
       serif: ['"Spectral"', 'serif'],
       mono: ['"Fira Code"', 'monospace'],
     },
