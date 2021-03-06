@@ -113,10 +113,22 @@
             }
         }
 
+        & table {
+            @apply border-2 border-collapse;
+
+            & th, & td {
+                @apply border px-2;
+            }
+            & th {
+            }
+            & td {
+            }
+        }
+
         & chess-board {
             --light-color: theme('colors.gray.50');
-            --dark-color: theme('colors.blue.300');
-            --highlight-color: theme('colors.blue.600');
+            --dark-color: theme('colors.indigo.500');
+            --highlight-color: theme('colors.red.300');
         }
 
         & .footnotes {

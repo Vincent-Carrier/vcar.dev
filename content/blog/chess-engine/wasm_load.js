@@ -5,7 +5,7 @@ ChessBoardElement.prototype.highlight = function (...squares) {
     render(html`
 			<style>
 				${squares.map(sq => `chess-board::part(square ${sq})`).join(', ')} {
-					outline: 4px dashed hsla(0, 20%, 50%, 50%);
+					outline: 4px dashed hsla(0, 20%, 20%, 50%);
 					outline-offset: -8px;
 				}
 			</style>
@@ -18,6 +18,19 @@ ChessBoardElement.prototype.init = function () {
         this.highlight(...moves)
     })
     this.addEventListener('mouseout-square', (e) => {
+        this.highlight()
+    })
+    this.addEventListener('drop', (e) => {
+        const move = game.move({
+            from: source,
+            to: target,
+            promotion: 'q' // NOTE: always promote to a queen for example simplicity
+        });
+
+        // illegal move
+        if (move === null) {
+            setAction('snapback');
+        }
         this.highlight()
     })
 }
