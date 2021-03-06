@@ -1,4 +1,6 @@
-import ChessboardElement from 'https://cdn.skypack.dev/chessboard-element'
+import * as ChessboardElement from 'https://cdn.skypack.dev/chessboard-element'
+
+console.log(ChessboardElement)
 
 Object.assign(window, { ChessboardElement })
 

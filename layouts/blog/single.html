@@ -6,8 +6,8 @@
 {{ end }}
 {{ define "description" }}{{ .Summary }}{{ end }}
 {{ define "main" }}
-  <main class="Card-lg py-16 px-12 sm:mt-12 sm:mx-4">
-    <article class="max-w-prose flow-root">
+  <div class="Card-lg">
+    <article class="flow-root p-8 sm:p-12">
       <header>
         <h1>
             {{ if .Params.series }}
@@ -41,5 +41,5 @@
         {{end}}
         {{ .Content }}
     </article>
-  </main>
+  </div>
 {{ end }}

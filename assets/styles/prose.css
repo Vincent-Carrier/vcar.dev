@@ -1,98 +1,130 @@
 @layer base {
-  article {
-    @apply font-serif text-gray-800 text-xl;
+    article {
+        @apply font-serif text-gray-800 text-xl;
 
-    & p:first-of-type {
-      text-indent: unset;
-    }
-
-    & a {
-      @apply text-blue-600;
-    }
-
-    & ul {
-      @apply list-disc ml-4;
-    }
-
-    & p {
-      @media (min-width: theme('screens.sm')) {
-        @apply justified indent;
-      }
-    }
-
-    & p > code {
-      @apply text-blue-800;
-      font-size: 90%;
-      white-space: nowrap;
-    }
-
-    & > * + * {
-      margin-top: theme('space.4');
-    }
-
-    & h1 {
-      @apply text-4xl tracking-tight font-sans;
-    }
-
-    & h2 {
-      @apply text-2xl mt-12;
-    }
-
-    & h1,
-    & h2,
-    & h3 {
-      @apply font-bold font-sans text-gray-900;
-    }
-
-    & ul, & ol {
-      @apply pl-8;
-    }
-
-    & code {
-      hyphens: none;
-    }
-
-    & .highlight {
-      width: clamp(40ch, 100%, 90ch);
-      @apply px-2 sm:px-4 py-4 border-2 border-gray-200 rounded-md bg-gray-50;
-      @apply text-sm mx-auto my-6;
-    }
-
-    & .chroma {
-      @apply bg-gray-50;
-    }
-
-    & summary {
-      @apply ml-6;
-    }
-
-    & hr {
-      @apply mt-16 mb-12 mx-16;
-    }
-
-    & figure {
-      @apply mx-auto mt-12 mb-8;
-
-      & img {
-        @apply rounded-lg shadow-md border-gray-100 border-4 max-w-lg mx-auto;
-      }
-
-      & figcaption {
-        @apply italic text-center text-gray-600 text-sm mt-2;
-      }
-
-      &.hanging-right {
-        @media (min-width: theme('screens.xl')) {
-          margin-left: -12rem;
-          @apply transform translate-x-40;
+        & p:first-of-type {
+            text-indent: unset;
         }
-      }
-    }
 
-    & chess-board {
-      --light-color: theme('colors.gray.50');
-      --dark-color: theme('colors.blue.300');
-      --highlight-color: theme('colors.blue.600');
+        & a {
+            @apply text-blue-600;
+        }
+
+        & ul {
+            @apply list-disc ml-4;
+        }
+
+        & p {
+            @media (min-width: theme('screens.sm')) {
+                @apply justified indent;
+            }
+        }
+
+        & p > code {
+            @apply text-blue-800;
+            font-size: 90%;
+            white-space: nowrap;
+        }
+
+        & > * + * {
+            margin-top: theme('space.4');
+        }
+
+        & h1 {
+            @apply text-4xl tracking-tight font-sans;
+        }
+
+        & h2 {
+            @apply text-2xl mt-12;
+        }
+
+        & h1,
+        & h2,
+        & h3 {
+            @apply font-bold font-sans text-gray-900;
+        }
+
+        & ul, & ol {
+            @apply pl-8;
+        }
+
+        & .two-cols ul {
+            column-width: 14rem;
+
+            & li {
+                break-inside: avoid-column;
+            }
+        }
+
+        & code {
+            hyphens: none;
+        }
+
+        & .highlight {
+            width: clamp(40ch, 100%, 80ch);
+            @apply px-2 sm:px-4 py-4 border-2 border-gray-200 rounded-md bg-gray-50;
+            @apply text-sm mx-auto my-6 overflow-x-scroll;
+        }
+
+        & .chroma {
+            @apply bg-gray-50;
+        }
+
+        & summary {
+            @apply ml-6;
+        }
+
+        & hr {
+            @apply mt-16 mb-12 mx-16;
+        }
+
+        & figure {
+            @apply mx-auto mt-12 mb-8;
+
+            & img {
+                @apply rounded-lg shadow-md border-gray-100 border-4 max-w-lg mx-auto;
+            }
+
+            & figcaption {
+                @apply italic text-center text-gray-600 text-sm mt-2;
+            }
+
+            &.hanging {
+                @media (min-width: theme('screens.2xl')) {
+                    @apply transform;
+                    &.right {
+                        margin-left: -18rem;
+                        @apply float-right translate-x-80;
+                    }
+
+                    &.left {
+                        margin-right: -18rem;
+                        @apply float-left -translate-x-80;
+                    }
+
+                    & img {
+                        @apply max-w-sm shadow-xl;
+                    }
+
+                    & figcaption {
+                        @apply hidden;
+                    }
+                }
+            }
+        }
+
+        & chess-board {
+            --light-color: theme('colors.gray.50');
+            --dark-color: theme('colors.blue.300');
+            --highlight-color: theme('colors.blue.600');
+        }
+
+        & .footnotes {
+            @apply text-sm;
+
+            & ol {
+                @apply list-decimal;
+            }
+        }
     }
-  }
 }

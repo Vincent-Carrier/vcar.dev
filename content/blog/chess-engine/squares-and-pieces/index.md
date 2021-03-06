@@ -1,7 +1,7 @@
 ---
-title: "Part I: Board and Pieces"
+title: "Part I: Squares and Pieces"
 series: ["Let's Build a Chess Engine in Golang"]
-date: '2021-01-16'
+date: '2021-03-04'
 summary: |
     Let's explore one of JavaScript's most undervalued feature and find
     out how to make the best of it.
@@ -9,7 +9,7 @@ summary: |
 
 <script defer type='module' src='https://cdn.skypack.dev/chessboard-element'></script>
 <script defer src='../wasm_exec.js'></script>
-<script defer src='../chess.js'></script>
+<script defer type='module' src='../chess.js'></script>
 <style>
     chess-board::part(e4) {
       outline: 3px solid #F9FAFB;

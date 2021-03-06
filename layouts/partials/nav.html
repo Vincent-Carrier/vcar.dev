@@ -1,11 +1,13 @@
-<nav class="absolute mt-16 mr-16 right-0 top-0 bg-gray-50 rounded-lg shadow-md flex space-x-8
-            px-8 py-4 w-auto bg-opacity-90" aria-label="primary">
-  {{ $url := .Page.RelPermalink }}
-  {{ $pages := dict "/" "/index" "/blog" "/blog" }}
-  {{ range $url, $title := $pages }}
-    {{ with $.GetPage $url }}
-      <a class="text-gray-700 hover:text-purple-800 font-mono font-medium text-2xl sm:text-xl"
-         href="{{ .RelPermalink }}">{{ $title }}</a>
-    {{ end }}
-  {{ end }}
-</nav>
+<header class='max-w-prose relative mx-auto'>
+  <nav class="absolute mt-8 mr-4 right-0 top-0 bg-gray-50 rounded-lg shadow-md flex space-x-8
+              px-8 py-4 w-auto bg-opacity-80" aria-label="primary">
+      {{ $url := .Page.RelPermalink }}
+      {{ $pages := dict "/" "/index" "/blog" "/blog" }}
+      {{ range $url, $title := $pages }}
+          {{ with $.GetPage $url }}
+            <a class="text-gray-700 hover:text-indigo-800 font-mono font-medium text-2xl sm:text-xl"
+               href="{{ .RelPermalink }}">{{ $title }}</a>
+          {{ end }}
+      {{ end }}
+  </nav>
+</header>

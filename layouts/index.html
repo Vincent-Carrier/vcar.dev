@@ -1,22 +1,29 @@
 {{ define "title" }}About me | {{ $.Site.Title }}{{ end }}
 
 {{ define "main" }}
-  <main class="Card-lg sm:mt-24 min-h-screen sm:min-h-0">
-    <div class="max-w-screen-sm px-6 sm:px-16  py-8 sm:py-12">
-      <h1 class="sm:text-right font-bold tracking-tight text-6xl mb-6">About me</h1>
+  <div class="Card-lg sm:pb-24">
+    <div class="px-6 sm:px-16 py-8 sm:py-12">
+      <h1 class="font-bold tracking-tight text-6xl mb-6">About me</h1>
       <p class="font-serif indented justified text-2xl">
-        I'm a Montréal-based software developer who specializes in the JamStack. I feel most comfortable at the intersection between code and design. I also spend too much time on fonts. My girlfriend likes to complain about it.
+        I'm a Montréal-based software developer who specializes in the JamStack. I feel most comfortable at the
+        intersection between code and design. I also spend too much time on fonts. My girlfriend likes to complain about
+        it.
       </p>
-      <div class="mt-8 flex flex-wrap space-x-2 text-blue-700 font-bold">
-        <a href="https://www.github.com/Vincent-Carrier">GitHub</a>
-        <span>|</span>
-        <a href="https://twitter.com/VincntCarrier">Twitter</a>
-        <span>|</span>
-        <a href="https://www.linkedin.com/in/vincent-carrier-23830a12b/">LinkedIn</a>
+      <div class="mt-12 mb-4 w-min sm:ml-auto mr-32 flex text-blue-700 font-bold divide-x">
+        <a class='pr-4 flex items-center' href="https://www.github.com/Vincent-Carrier">
+          GitHub
+          <span class='inline-block w-6 h-6 ml-2'>{{ partial "svg/github-original.svg" }}</span>
+        </a>
+        <a class='pl-4 flex items-center' href="https://twitter.com/VincntCarrier">
+          <span class='inline-block w-6 h-6 mr-2' style='transform: translateY(2px)'>{{ partial "svg/twitter-original.svg" }}</span>
+          Twitter
+        </a>
       </div>
     </div>
 
-    <div class="relative mt-20 mb-8 transform sm:-translate-x-12 bg-blue-600 max-w-md px-4 py-6 shadow-2xl">
+    <div class="hidden sm:flex absolute shadow-2xl rounded-sm mb-8 overflow-x-hidden
+                transform -translate-y-8 sm:translate-x-56 md:translate-x-80 bg-blue-600 max-w-xl
+                px-8 py-6 bg-gradient-to-tl from-indigo-600 to-blue-600">
       <div class="text-right mr-48">
         <p class="italic font-bold text-gray-50 tracking-wide sm:text-lg pb-2">
           Write code.<br>
@@ -25,14 +32,15 @@
         </p>
         <p class="font-bold text-3xl text-white">Vincent Carrier</p>
       </div>
-      {{ $res := resources.Get "/profile.png" }}
-      {{ $profile := $res.Resize "300x" }}
-      {{ $profile2 := $res.Resize "600x" }}
+        {{ $res := resources.Get "/profile.png" }}
+        {{ $profile := $res.Resize "300x" }}
+        {{ $profile2 := $res.Resize "600x" }}
       <img src="{{ $profile.RelPermalink }}"
            srcset="{{ $profile.RelPermalink }} 1x, {{ $profile2.RelPermalink }} 2x"
            title="Me, basking in the eternal joy of autumn leaves"
            alt="Me, basking in the eternal joy of autumn leaves"
-           class="fixed -right-14 bottom-0 w-72" style="filter: grayscale(1) contrast(80%) sepia(20%) hue-rotate(180deg)">
+           class="fixed -right-14 bottom-0 w-72"
+           style="filter: grayscale(1) contrast(85%) sepia(60%) hue-rotate(180deg)">
     </div>
-  </main>
+  </div>
 {{ end }}

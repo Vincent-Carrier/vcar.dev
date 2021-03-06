@@ -13,6 +13,10 @@
     @apply text-gray-800;
   }
 
+  :root {
+    --icon-fill: theme('colors.blue.700');
+  }
+
   @media (max-width: theme('screens.sm')) {
     html {
       font-size: 80%;
@@ -25,7 +29,7 @@
     @apply bg-white rounded-md shadow-md;
   }
   .Card-lg {
-    @apply bg-white sm:rounded-lg sm:shadow-lg;
+    @apply bg-white rounded-lg shadow-lg;
   }
 
   .Question {
