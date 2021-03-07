@@ -1,5 +1,5 @@
 /**
  * @type {import('chessboard-element').ChessBoardElement}
  */
-const board = document.getElementById('intro')
+const board = $('chess-board')
 board.init()

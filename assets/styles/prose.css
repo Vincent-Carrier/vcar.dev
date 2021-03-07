@@ -114,14 +114,14 @@
         }
 
         & table {
-            @apply border-2 border-collapse;
+            @apply border-2 border-gray-300 border-collapse;
 
+
+            & td:nth-child(2n-1), & th:nth-child(2n-1) {
+                @apply bg-gray-100;
+            }
             & th, & td {
-                @apply border px-2;
-            }
-            & th {
-            }
-            & td {
+                @apply border px-4;
             }
         }
 
@@ -129,6 +129,10 @@
             --light-color: theme('colors.gray.50');
             --dark-color: theme('colors.indigo.500');
             --highlight-color: theme('colors.red.300');
+
+            &::part(board) {
+                @apply border-6 border-indigo-200 rounded-md;
+            }
         }
 
         & .footnotes {

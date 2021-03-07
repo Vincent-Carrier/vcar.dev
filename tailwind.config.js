@@ -125,6 +125,7 @@ module.exports = {
       0: '0px',
       2: '2px',
       4: '4px',
+      6: '6px',
       8: '8px',
     },
     boxShadow: {
@@ -172,7 +173,7 @@ module.exports = {
     fontFamily: {
       sans: ['Inter', 'system-ui', 'Helvetica', 'sans-serif'],
       serif: ['"Spectral"', 'serif'],
-      mono: ['"Fira Code"', 'monospace'],
+      mono: ['"JetBrains Mono"', 'monospace'],
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
