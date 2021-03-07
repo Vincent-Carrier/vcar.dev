@@ -2,6 +2,7 @@
 title: "Part II: Move Generation"
 series: ["Let's Build a Chess Engine in Golang"]
 date: '2021-03-05'
+draft: true
 summary: |
     Let's explore one of JavaScript's most undervalued feature and find
     out how to make the best of it.
