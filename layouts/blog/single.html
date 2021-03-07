@@ -12,8 +12,7 @@
         <h1>
             {{ if .Params.series }}
               <div class='text-gray-600 font-medium text-2xl'>
-                  {{ $series := index .Params.series 0 }}
-                  {{ $series }}
+                  {{ index .Params.series 0 }}
               </div>
             {{ end }}
             {{ .Title }}
@@ -24,9 +23,8 @@
       </header>
         {{ if .Params.series }}
           <nav class='font-sans max-w-lg my-16 px-6 py-6 mx-auto bg-gray-50 border-2 border-dashed border-blue-400 rounded-md'>
-              {{ $name := index .Params.series 0 }}
             <p class='font-sans'>This post is part of a series.</p>
-              {{ $name := $name | urlize }}
+              {{ $name := index .Params.series 0 | urlize }}
               {{ $series := index .Site.Taxonomies.series $name }}
             <ol class='mt-4 pl-6 list-disc'>
                 {{ range $series.Pages.Reverse }}

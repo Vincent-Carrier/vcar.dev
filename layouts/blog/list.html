@@ -2,7 +2,7 @@
 {{ define "main" }}
   <ul class="grid grid-cols-1 gap-4">
       {{ range .Pages }}
-          {{ if (not .Draft) }}
+          {{ if (not (.Draft | and hugo.IsProduction)) }}
             <li class="Card-md">
               <a href="{{ .RelPermalink }}">
                 <div class="px-8 py-6 flex-col max-w-screen-sm">
