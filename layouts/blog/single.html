@@ -1,8 +1,9 @@
 {{ define "title" }}
     {{ if .Params.series }}
         {{ $series := index .Params.series 0 }}
-        {{ $series }}: {{ .Title }}
+        {{- $series -}}:
     {{ end }}
+    {{- .Title -}}
 {{ end }}
 {{ define "description" }}{{ .Summary }}{{ end }}
 {{ define "main" }}

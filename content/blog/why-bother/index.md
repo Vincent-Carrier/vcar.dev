@@ -15,11 +15,13 @@ There's been a renewed enthusiasm for chess recently, in no small part thanks to
 </figure>
 
 
-That's all the better for us computer nerds, because chess-playing is one the oldest, most fascinating problems in our domain. From Ken Thompson's Belle engine[^ken] first defeating human chess Masters, to Deep Blue's victory over Kasparov, to AlphaZero's emergence as an AI Grandmaster, computer chess has been through it all.
+Computer chess has a rich history that's deeply intertwined with computer science history as a whole. In a way, computer chess predates computers themselves: the *Mechanical Turk* was an elaborate hoax, secretly operated by a human chess master. It went on to defeat, among others, Napoléon Bonaparte and Benjamin Franklin.
 
-Chess engines today are insanely sophisticated, way beyond the skill level of any human chess player. Stockfish, the top program, can scale up to 512 threads, with over a terabyte of endgame positions in its database.
+The first paper on the subject was written in 1950 by Claude Shannon, a.k.a. the father of information theory. The first chess engine to challenge US chess Masters was Ken Thompson's Belle machine in 1980. Yes, this is the same Ken Thompson who wrote the UNIX operating system and co-authored the Go language.
 
-Learning how computers play might not only make you a better chess player, it will also make you a better programmer. Writing an effective chess engine will test every inch of your programming skill set, including:
+IBM's Deep Blue became the first computer to surpass a World Champion, beating Kasparov in 1997. Since then, computer chess has been refined to perfection by engines like Stockfish and AlphaZero, using sophisticated techniques like neural nets and magic bitboards.
+
+We won't be building the next Stockfish today. Instead, in the spirit of Golang, we'll try build something that's both simple enough to extend, yet strong enough to get you banned from [chess.com]().
 
 <div class='two-cols'>
 

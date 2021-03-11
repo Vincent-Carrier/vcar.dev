@@ -9,7 +9,7 @@ summary: |
 ---
 
 <script defer type='module' src='https://cdn.skypack.dev/chessboard-element'></script>
-<script defer src='../wasm_exec.js'></script>
+<script defer src='../../../assets/scripts/chess-engine/wasm_exec.js'></script>
 <script defer src='../wasm_load.js'></script>
 <script defer type='module' src='../chessboard.js'></script>
 <script defer type='module' src='index.js'></script>

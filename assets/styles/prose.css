@@ -2,7 +2,7 @@
     article {
         @apply font-serif text-gray-800 text-xl;
 
-        & p:first-of-type {
+        & p:first-of-type, & h2 + p {
             text-indent: unset;
         }
 
