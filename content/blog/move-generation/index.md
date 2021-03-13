@@ -8,11 +8,8 @@ summary: |
     out how to make the best of it.
 ---
 
-<script defer type='module' src='https://cdn.skypack.dev/chessboard-element'></script>
-<script defer src='../../../assets/scripts/chess-engine/wasm_exec.js'></script>
-<script defer src='../wasm_load.js'></script>
-<script defer type='module' src='../chessboard.js'></script>
-<script defer type='module' src='index.js'></script>
+<script type='module' defer src='https://cdn.skypack.dev/chessboard-element'></script>
+<script type='module' defer src='index.js'></script>
 <div id='chessboard-styles'></div>
 
 If you're new to computer chess, your first intuition might be to represent the board like this.
