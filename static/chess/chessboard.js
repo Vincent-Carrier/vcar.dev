@@ -35,4 +35,5 @@ Object.assign(ChessBoardElement.prototype, {
   },
 })
 
+console.log('monkey patching ChessBoardElement')
 Object.assign(window, { ChessBoardElement })
