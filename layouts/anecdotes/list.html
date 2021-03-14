@@ -1,0 +1,22 @@
+{{ define "title" }}Blog{{ end }}
+{{ define "main" }}
+<div class="Card-md px-8 py-8 max-w-lg mx-auto">
+  <blockquote class="italic text-2xl font-serif pb-4">
+    <p>
+      And time, in our camp, is moving<br />
+      As you'd anticipate it to<br />
+      But what is this sample proving?<br />
+      Anecdotes cannot say<br />
+      What time may do<br />
+    </p>
+  </blockquote>
+  <cite class='block text-right font-serif'><em>Anecdotes</em> — Joanna Newsom</cite>
+</div>
+<ul class="grid grid-cols-1 gap-4 mt-12">
+  {{ range .Pages }}
+    <li class='Card-md'>
+      {{ .Content }}
+    </li>
+  {{ end }}
+</ul>
+{{ end }}

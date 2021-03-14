@@ -5,7 +5,9 @@ Object.assign(ChessBoardElement.prototype, {
   init() {
     this.addEventListener('mouseover-square', (e) => {
       if (e.detail.piece) {
-        let moves = this.moves(e.detail.square)
+        console.log(e.detail.square)
+        let moves = chess?.moves(this.fen(), e.detail.square)
+        console.log(moves)
         this.highlight(...moves)
       }
     })
@@ -34,6 +36,3 @@ Object.assign(ChessBoardElement.prototype, {
     )
   },
 })
-
-console.log('monkey patching ChessBoardElement')
-Object.assign(window, { ChessBoardElement })

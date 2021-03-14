@@ -15,4 +15,7 @@ markup:
 
 taxonomies:
   series: series
-  tag: tags
+
+disableKinds:
+  - taxonomy
+  - term
