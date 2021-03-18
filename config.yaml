@@ -16,6 +16,3 @@ markup:
 taxonomies:
   series: series
 
-disableKinds:
-  - taxonomy
-  - term
