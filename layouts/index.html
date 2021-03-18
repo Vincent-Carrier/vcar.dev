@@ -10,7 +10,7 @@
         Oh and I like fonts. Like, a lot. <em>Like seriously, why does this guy like fonts
         so much?<em>
       </p>
-      <div class="mt-12 mb-4 w-min sm:ml-auto mr-32 flex text-blue-700 font-bold divide-x">
+      <div class="mt-12 mb-4 w-min sm:ml-auto mr-32 flex text-blue-700 dark:text-blue-300 font-bold divide-x">
         <a class='pr-4 flex items-center' href="https://www.github.com/Vincent-Carrier">
           GitHub
           <span class='inline-block w-6 h-6 ml-2'>{{ partial "svg/github-original.svg" }}</span>
@@ -23,8 +23,9 @@
     </div>
 
     <div class="hidden sm:flex absolute shadow-2xl rounded-sm mb-8 overflow-x-hidden
-                transform -translate-y-8 sm:translate-x-56 md:translate-x-80 bg-blue-600 max-w-xl
-                px-8 py-6 bg-gradient-to-tl from-indigo-600 to-blue-600">
+                transform -translate-y-8 sm:translate-x-56 md:translate-x-80 max-w-xl
+                px-8 py-6 bg-gradient-to-tl from-indigo-600 to-blue-600
+                dark:from-indigo-800 dark:to-blue-900">
       <div class="text-right mr-48">
         <p class="italic font-bold text-gray-50 tracking-wide sm:text-lg pb-2">
           Write code.<br>
@@ -33,15 +34,12 @@
         </p>
         <p class="font-bold text-3xl text-white">Vincent Carrier</p>
       </div>
-        {{ $res := resources.Get "/profile.png" }}
-        {{ $profile := $res.Resize "300x" }}
-        {{ $profile2 := $res.Resize "600x" }}
-      <img src="{{ $profile.RelPermalink }}"
-           srcset="{{ $profile.RelPermalink }} 1x, {{ $profile2.RelPermalink }} 2x"
+      <img src="/profile@0.5x.png"
+           srcset="/profile@0.5x.webp 1x, /profile.webp 2x"
            title="Me, basking in the eternal joy of autumn leaves"
            alt="Me, basking in the eternal joy of autumn leaves"
            class="fixed -right-14 bottom-0 w-72"
-           style="filter: grayscale(1) contrast(85%) sepia(60%) hue-rotate(180deg)">
+           style="filter: sepia(60%) hue-rotate(180deg)">
     </div>
   </div>
 {{ end }}

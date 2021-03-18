@@ -3,18 +3,26 @@
 @tailwind utilities;
 
 @layer base {
-  @import 'syntax.css';
   @import 'prose.css';
+  @media (prefers-color-scheme: light) {
+    @import 'syntax.css';
+  }
+  @media (prefers-color-scheme: dark) {
+    @import 'syntax-dark.css';
+  }
+
 
   body {
     font-synthesis: none;
     background-image: url('/topography.svg');
-    @apply bg-gray-50;
-    @apply text-gray-800;
+    @apply bg-gray-50 dark:bg-black text-gray-800 dark:text-gray-50;
   }
 
   :root {
     --icon-fill: theme('colors.blue.700');
+    @media (prefers-color-scheme: dark) {
+      --icon-fill: theme('colors.blue.300');
+    }
   }
 
   @media (max-width: theme('screens.sm')) {
@@ -26,16 +34,16 @@
 
 @layer components {
   .Card-md {
-    @apply bg-white rounded-md shadow-md;
+    @apply bg-white dark:bg-gray-900 rounded-md shadow-md;
   }
   .Card-lg {
-    @apply bg-white rounded-lg shadow-lg;
+    @apply bg-white dark:bg-gray-900 rounded-lg shadow-lg;
   }
 
   .Question {
     @apply text-right italic mt-16 font-serif;
     & code {
-      @apply text-lg text-blue-800;
+      @apply text-lg text-blue-800 dark:text-blue-200;
     }
   }
 }

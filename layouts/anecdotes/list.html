@@ -14,8 +14,13 @@
 </div>
 <ul class="grid grid-cols-1 gap-4 mt-12">
   {{ range .Pages }}
-    <li class='Card-md'>
-      {{ .Content }}
+    <li class='Card-md max-w-xl mx-auto px-8 py-8 font-serif'>
+      <time class="font-sans block mb-4 text-gray-600 dark:text-gray-400">
+        {{- .PublishDate.Format "January 2, 2006" -}}
+      </time>
+      <article>
+        {{ .Content }}
+      </article>
     </li>
   {{ end }}
 </ul>

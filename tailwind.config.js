@@ -7,7 +7,7 @@ module.exports = {
     layers: ['components', 'utilities'],
   },
   presets: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     screens: {
       sm: '640px',
@@ -24,8 +24,8 @@ module.exports = {
       white: colors.white,
       gray: colors.blueGray,
       red: colors.red,
-      yellow: colors.amber,
-      green: colors.emerald,
+      // yellow: colors.amber,
+      green: colors.teal,
       blue: colors.blue,
       indigo: colors.indigo,
       purple: colors.violet,
