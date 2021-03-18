@@ -187,7 +187,7 @@ fibonacci()
 // => [0, 1, 1, 4, 9, 25, 64, 169, 441, 1156]
 ```
 
-Now, _that's_ what I call functional programming. Check out the [Babel plugin](https://babeljs.io/docs/en/babel-plugin-proposal-pipeline-operator) if you want to try it for yourself.
+*Now, that's what I call functional programming!* Check out the [Babel plugin](https://babeljs.io/docs/en/babel-plugin-proposal-pipeline-operator) if you want to try it for yourself.
 
 ## Further reading
 

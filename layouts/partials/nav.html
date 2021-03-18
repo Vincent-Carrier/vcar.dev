@@ -1,5 +1,6 @@
-<header class='max-w-prose relative mx-auto'>
-  <nav class="absolute mt-8 mr-4 right-0 top-0 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md flex space-x-8
+<header class='max-w-prose relative mx-auto h-32 sm:h-0'>
+  <nav class="absolute mt-8 mr-4 right-0 top-0 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md
+              grid grid-cols-1 gap-4 sm:gap-8 sm:grid-flow-col-dense
               px-8 py-4 w-auto bg-opacity-80" aria-label="primary">
       {{ $url := .Page.RelPermalink }}
       {{ $pages := dict "/" "/about" "/anecdotes/" "/anecdotes" "/blog/" "/blog" }}

@@ -12,13 +12,13 @@
       <header>
         <h1>
             {{ if .Params.series }}
-              <div class='text-gray-600 font-medium text-2xl'>
+              <div class='text-gray-600 dark:text-gray-200 font-medium text-2xl'>
                   {{ index .Params.series 0 }}
               </div>
             {{ end }}
             {{ .Title }}
         </h1>
-        <time class="text-gray-600 mt-4 block font-sans">
+        <time class="text-gray-600 dark:text-gray-300 mt-2 mb-8 block font-sans">
             {{- .PublishDate.Format "Monday, January 2, 2006" -}}
         </time>
       </header>
