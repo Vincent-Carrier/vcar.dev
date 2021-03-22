@@ -1,7 +1,13 @@
-import '/chess/wasm_load.js'
+import augmentChessBoard from '/chess/wasm_load.js'
 
-/**
- * @type {import('chessboard-element').ChessBoardElement}
- */
-const board = $('chess-board')
-board.init()
+async function main() {
+  await augmentChessBoard()
+
+  /**
+   * @type {import('chessboard-element').ChessBoardElement}
+   */
+  const board = $('chess-board')
+  board.init()
+}
+
+main()

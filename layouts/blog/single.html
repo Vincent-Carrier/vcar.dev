@@ -23,7 +23,8 @@
         </time>
       </header>
         {{ if .Params.series }}
-          <nav class='font-sans max-w-lg my-16 px-6 py-6 mx-auto bg-gray-50 border-2 border-dashed border-blue-400 rounded-md'>
+          <nav class='font-sans max-w-lg my-16 px-6 py-6 mx-auto bg-gray-50 dark:bg-gray-800
+          border-2 border-dashed border-blue-400 dark:border-blue-800 rounded-md'>
             <p class='font-sans'>This post is part of a series.</p>
               {{ $name := index .Params.series 0 | urlize }}
               {{ $series := index .Site.Taxonomies.series $name }}

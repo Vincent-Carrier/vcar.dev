@@ -25,7 +25,7 @@
         window.$$ = (query, el = document) => Array.from(el.querySelectorAll(query))
     </script>
   </head>
-  <body class="{{ anchorize .Page.Title }} py-16">
+  <body class="{{ anchorize .Page.Title }} py-16 overflow-x-hidden">
       {{ partial "nav.html" . }}
     <main class='max-w-3xl mx-auto mt-20 px-4'>
         {{ block "main" .Page }} {{ end }}

@@ -10,8 +10,9 @@ summary: |
 
 <script defer type='module' src='https://cdn.skypack.dev/chessboard-element'></script>
 
-If you're new to computer chess, your first intuition might be to represent the board like this.
-However, representing the board like this forces us to make four integer comparisons every time we want to know if a square is inbounds.
+If we're gonna write a chess engine, we better have a chessboard! The first question we must answer for ourselves is: how then, should we represent that chessboard in memory?
+
+An intuitive answer would be create an 8-by-8 array of pieces. 
 
 ```go
 type Board [8][8]Piece
@@ -26,7 +27,12 @@ func (sq Sq) Inbounds() bool {
 }
 ```
 
-Instead, we can use a clever trick:
+However, we can do a lot better than this. With this setup, checking if a square is inbounds takes 4 comparisons + 3 ANDs. This isn't good enough for this kind of hot path.
+
+## Enter the x88
+
+There's a fairly straightforward trick we can use to optimize this code path, but we'll have to use a different board representation:
+
 ```go
 type Board [128]Piece
 type Sq int16
@@ -35,6 +41,8 @@ func (sq Sq) Inbounds() bool {
 	return sq & 0x88 == 0
 }
 ```
+
+
 
 <div class='font-mono flex justify-center'>
 
@@ -78,8 +86,11 @@ chess-board::part(square h8)::after {
   content: '0x77'
 }
 </style>
-<figure class='max-w-lg h-96 mb-32'>
-    <chess-board id='x88-board'
-        style='max-width: 30rem; max-height: 30rem; margin: 0 auto'>
-    </chess-board>
+<figure class='max-w-lg mb-32'>
+    <chess-board id='x88-board'></chess-board>
+    <chess-board id='x88-dummy' style='filter: grayscale(1)'></chess-board>
 </figure>
+
+## Further reading
+* Bitboards
+* Chessboard representations
