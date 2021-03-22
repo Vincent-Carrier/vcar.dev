@@ -13,9 +13,12 @@
 
 
   body {
-    font-synthesis: none;
+    @apply bg-gray-50 dark:bg-black text-gray-800 dark:text-gray-50 transition-all duration-1000;
     background-image: url('/topography.svg');
-    @apply bg-gray-50 dark:bg-black text-gray-800 dark:text-gray-50;
+
+    &.minimal {
+      backdrop-filter: brightness(2);
+    }
   }
 
   :root {
@@ -37,7 +40,11 @@
     @apply bg-white dark:bg-gray-900 rounded-md shadow-md;
   }
   .Card-lg {
-    @apply bg-white dark:bg-gray-900 rounded-lg shadow-lg;
+    @apply bg-white dark:bg-gray-900 rounded-lg transition-all duration-1000;
+
+    :not(.minimal) & {
+      @apply shadow-lg;
+    }
   }
 
   .Question {
