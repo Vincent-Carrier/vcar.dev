@@ -41,15 +41,5 @@
         {{end}}
         {{ .Content }}
     </article>
-    <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (scrollY != 0)
-            $('body').classList.toggle('minimal')
-        })
-      })
-      const toggle = $('h1')
-      if (toggle) observer.observe(toggle)
-    </script>
   </div>
 {{ end }}
